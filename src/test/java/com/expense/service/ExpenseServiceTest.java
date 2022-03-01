@@ -25,7 +25,7 @@ import com.expense.service.impl.ExpenseServiceImpl;
 public class ExpenseServiceTest {
 
 	Logger log = Logger.getLogger(ExpenseServiceTest.class.getName());
-	
+
 	@Mock
 	ExpenseRepository expenseRepository;
 
@@ -45,7 +45,7 @@ public class ExpenseServiceTest {
 		when(expenseRepository.save(Mockito.any(Expense.class))).thenReturn(expense);
 		Expense created = expenseService.saveExpense(expense);
 
-		log.info("created: "+created);
+		log.info("created: " + created);
 		assertThat(created.getAmount(), is(1000.00));
 	}
 
@@ -65,7 +65,5 @@ public class ExpenseServiceTest {
 		List<Expense> expenseList1 = expenseService.getExpense();
 		assertEquals(1, expenseList1.size());
 	}
-	
-
 
 }
