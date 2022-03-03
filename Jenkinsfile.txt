@@ -60,6 +60,15 @@ pipeline {
             }
         }
 		//Code ends for stage Code Coverage
-		
+
+		//Code starts for stage API Test
+		stage('API Test') {
+            steps {
+				//Change git url below as per your forked github repository URL
+				git url: 'https://github.com/aeColchado/EMAPITests-ex.git'
+            	sh 'mvn -Dtest=ExpenseManagerAPITest test'
+            }
+        }
+		//Code ends for stage API Test	
     }
 }
